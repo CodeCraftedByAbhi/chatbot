@@ -1,0 +1,891 @@
+{
+  "settings": {
+    "languages": [],
+    "forceNER": true,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "hello": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hey": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "bye": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "goodby": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "later,see,you": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "are,who,you": {
+            "intent": "bot.name",
+            "domain": "default"
+          },
+          "is,name,what,your": {
+            "intent": "bot.name",
+            "domain": "default"
+          },
+          "%name%,is,my,name": {
+            "intent": "user.setName",
+            "domain": "default"
+          },
+          "%name%,am,i": {
+            "intent": "user.setName",
+            "domain": "default"
+          },
+          "%name%,call,me": {
+            "intent": "user.setName",
+            "domain": "default"
+          },
+          "%date%,a,meet,on,schedul": {
+            "intent": "calendar.create",
+            "domain": "default"
+          },
+          "%date%,me,meet": {
+            "intent": "calendar.create",
+            "domain": "default"
+          },
+          "%email%,at,email,me": {
+            "intent": "user.setEmail",
+            "domain": "default"
+          },
+          "%email%,email,is,my": {
+            "intent": "user.setEmail",
+            "domain": "default"
+          },
+          "i,love,this": {
+            "intent": "sentiment.example",
+            "domain": "default"
+          },
+          "aw,is,this": {
+            "intent": "sentiment.example",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greetings.hello": "default",
+          "greetings.bye": "default",
+          "bot.name": "default",
+          "user.setName": "default",
+          "calendar.create": "default",
+          "user.setEmail": "default",
+          "sentiment.example": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "goodbye",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "see you later",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "who are you",
+            "intent": "bot.name"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is your name",
+            "intent": "bot.name"
+          },
+          {
+            "domain": "default",
+            "utterance": "my name is %name%",
+            "intent": "user.setName"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'm %name%",
+            "intent": "user.setName"
+          },
+          {
+            "domain": "default",
+            "utterance": "call me %name%",
+            "intent": "user.setName"
+          },
+          {
+            "domain": "default",
+            "utterance": "schedule a meeting on %date%",
+            "intent": "calendar.create"
+          },
+          {
+            "domain": "default",
+            "utterance": "meet me %date%",
+            "intent": "calendar.create"
+          },
+          {
+            "domain": "default",
+            "utterance": "email me at %email%",
+            "intent": "user.setEmail"
+          },
+          {
+            "domain": "default",
+            "utterance": "my email is %email%",
+            "intent": "user.setEmail"
+          },
+          {
+            "domain": "default",
+            "utterance": "I love this",
+            "intent": "sentiment.example"
+          },
+          {
+            "domain": "default",
+            "utterance": "this is awful",
+            "intent": "sentiment.example"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "hello": 1,
+              "hi": 1,
+              "hey": 1,
+              "bye": 1,
+              "goodby": 1,
+              "see": 1,
+              "you": 1,
+              "later": 1,
+              "who": 1,
+              "are": 1,
+              "what": 1,
+              "is": 1,
+              "your": 1,
+              "name": 1,
+              "my": 1,
+              "%name%": 1,
+              "i": 1,
+              "am": 1,
+              "call": 1,
+              "me": 1,
+              "schedul": 1,
+              "a": 1,
+              "meet": 1,
+              "on": 1,
+              "%date%": 1,
+              "email": 1,
+              "at": 1,
+              "%email%": 1,
+              "love": 1,
+              "this": 1,
+              "aw": 1
+            },
+            "intents": {
+              "greetings.hello": 1,
+              "greetings.bye": 1,
+              "bot.name": 1,
+              "user.setName": 1,
+              "calendar.create": 1,
+              "user.setEmail": 1,
+              "sentiment.example": 1
+            },
+            "intentFeatures": {
+              "greetings.hello": {
+                "hello": 1,
+                "hi": 1,
+                "hey": 1
+              },
+              "greetings.bye": {
+                "bye": 1,
+                "goodby": 1,
+                "see": 1,
+                "you": 1,
+                "later": 1
+              },
+              "bot.name": {
+                "who": 1,
+                "are": 1,
+                "you": 1,
+                "what": 1,
+                "is": 1,
+                "your": 1,
+                "name": 1
+              },
+              "user.setName": {
+                "my": 1,
+                "name": 1,
+                "is": 1,
+                "%name%": 1,
+                "i": 1,
+                "am": 1,
+                "call": 1,
+                "me": 1
+              },
+              "calendar.create": {
+                "schedul": 1,
+                "a": 1,
+                "meet": 1,
+                "on": 1,
+                "%date%": 1,
+                "me": 1
+              },
+              "user.setEmail": {
+                "email": 1,
+                "me": 1,
+                "at": 1,
+                "%email%": 1,
+                "my": 1,
+                "is": 1
+              },
+              "sentiment.example": {
+                "i": 1,
+                "love": 1,
+                "this": 1,
+                "is": 1,
+                "aw": 1
+              }
+            },
+            "featuresToIntent": {
+              "hello": [
+                "greetings.hello"
+              ],
+              "hi": [
+                "greetings.hello"
+              ],
+              "hey": [
+                "greetings.hello"
+              ],
+              "bye": [
+                "greetings.bye"
+              ],
+              "goodby": [
+                "greetings.bye"
+              ],
+              "see": [
+                "greetings.bye"
+              ],
+              "you": [
+                "greetings.bye",
+                "bot.name"
+              ],
+              "later": [
+                "greetings.bye"
+              ],
+              "who": [
+                "bot.name"
+              ],
+              "are": [
+                "bot.name"
+              ],
+              "what": [
+                "bot.name"
+              ],
+              "is": [
+                "bot.name",
+                "user.setName",
+                "user.setEmail",
+                "sentiment.example"
+              ],
+              "your": [
+                "bot.name"
+              ],
+              "name": [
+                "bot.name",
+                "user.setName"
+              ],
+              "my": [
+                "user.setName",
+                "user.setEmail"
+              ],
+              "%name%": [
+                "user.setName"
+              ],
+              "i": [
+                "user.setName",
+                "sentiment.example"
+              ],
+              "am": [
+                "user.setName"
+              ],
+              "call": [
+                "user.setName"
+              ],
+              "me": [
+                "user.setName",
+                "calendar.create",
+                "user.setEmail"
+              ],
+              "schedul": [
+                "calendar.create"
+              ],
+              "a": [
+                "calendar.create"
+              ],
+              "meet": [
+                "calendar.create"
+              ],
+              "on": [
+                "calendar.create"
+              ],
+              "%date%": [
+                "calendar.create"
+              ],
+              "email": [
+                "user.setEmail"
+              ],
+              "at": [
+                "user.setEmail"
+              ],
+              "%email%": [
+                "user.setEmail"
+              ],
+              "love": [
+                "sentiment.example"
+              ],
+              "this": [
+                "sentiment.example"
+              ],
+              "aw": [
+                "sentiment.example"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "hello",
+                "hi",
+                "hey",
+                "bye",
+                "goodby",
+                "see",
+                "you",
+                "later",
+                "who",
+                "are",
+                "what",
+                "is",
+                "your",
+                "name",
+                "my",
+                "%name%",
+                "i",
+                "am",
+                "call",
+                "me",
+                "schedul",
+                "a",
+                "meet",
+                "on",
+                "%date%",
+                "email",
+                "at",
+                "%email%",
+                "love",
+                "this",
+                "aw"
+              ],
+              "intents": [
+                "greetings.hello",
+                "greetings.bye",
+                "bot.name",
+                "user.setName",
+                "calendar.create",
+                "user.setEmail",
+                "sentiment.example"
+              ],
+              "perceptrons": [
+                [
+                  9.27029037475586,
+                  9.274388313293457,
+                  9.223413467407227,
+                  -4.500453472137451,
+                  -4.460986614227295,
+                  -1.1935346126556396,
+                  -2.3863117694854736,
+                  -1.1935346126556396,
+                  -1.1920193433761597,
+                  -1.1920193433761597,
+                  -0.78498774766922,
+                  -2.1655542850494385,
+                  -0.78498774766922,
+                  -1.0395809412002563,
+                  -0.5914264917373657,
+                  -1.9283114671707153,
+                  -1.934292197227478,
+                  -0.9087690114974976,
+                  -0.7643604278564453,
+                  -2.082890272140503,
+                  -0.6970840096473694,
+                  -0.6970840096473694,
+                  -1.342913269996643,
+                  -0.6970840096473694,
+                  -1.342913269996643,
+                  -1.0091891288757324,
+                  -0.6720522046089172,
+                  -1.0091891288757324,
+                  -1.0248581171035767,
+                  -1.8138426542282104,
+                  -0.7882930040359497,
+                  4.774705070002629
+                ],
+                [
+                  -3.3658266067504883,
+                  -3.3345160484313965,
+                  -3.302731513977051,
+                  10.341397285461426,
+                  10.332763671875,
+                  4.455135345458984,
+                  1.766400694847107,
+                  4.455135345458984,
+                  -2.688398599624634,
+                  -2.688398599624634,
+                  -0.5796753764152527,
+                  -1.6504923105239868,
+                  -0.5796753764152527,
+                  -0.8240504860877991,
+                  -0.47839656472206116,
+                  -1.4850698709487915,
+                  -1.4623855352401733,
+                  -0.6755848526954651,
+                  -0.564384400844574,
+                  -1.5778117179870605,
+                  -0.5338559150695801,
+                  -0.5338559150695801,
+                  -1.021147608757019,
+                  -0.5338559150695801,
+                  -1.021147608757019,
+                  -0.7606773972511292,
+                  -0.5256543755531311,
+                  -0.7606773972511292,
+                  -0.7862574458122253,
+                  -1.377691626548767,
+                  -0.5908238291740417,
+                  3.603948366798543
+                ],
+                [
+                  -0.5554942488670349,
+                  -0.5488243103027344,
+                  -0.543602705001831,
+                  -0.5407584309577942,
+                  -0.5384008288383484,
+                  -1.9205204248428345,
+                  3.3007419109344482,
+                  -1.9205204248428345,
+                  5.2212815284729,
+                  5.2212815284729,
+                  4.788877964019775,
+                  1.4147064685821533,
+                  4.788877964019775,
+                  2.7516725063323975,
+                  -2.455512762069702,
+                  -2.252108335494995,
+                  -0.2880980670452118,
+                  -0.09317288547754288,
+                  -0.06871168315410614,
+                  -0.3687521815299988,
+                  -0.16529378294944763,
+                  -0.16529378294944763,
+                  -0.3586067259311676,
+                  -0.16529378294944763,
+                  -0.3586067259311676,
+                  -0.5017536878585815,
+                  -0.09073992073535919,
+                  -0.5017536878585815,
+                  -0.16228477656841278,
+                  -1.0959726572036743,
+                  -0.9110405445098877,
+                  0.5412622450423883
+                ],
+                [
+                  -0.4903894066810608,
+                  -0.4817160964012146,
+                  -0.4733075797557831,
+                  -0.46542999148368835,
+                  -0.45820537209510803,
+                  -0.1982356607913971,
+                  -0.40878182649612427,
+                  -0.1982356607913971,
+                  -0.17984768748283386,
+                  -0.17984768748283386,
+                  -1.3954970836639404,
+                  0.4792907238006592,
+                  -1.3954970836639404,
+                  1.892156958580017,
+                  2.274641752243042,
+                  9.188780784606934,
+                  1.809548020362854,
+                  2.8612139225006104,
+                  3.0387063026428223,
+                  1.631669282913208,
+                  -0.19542929530143738,
+                  -0.19542929530143738,
+                  -1.0817469358444214,
+                  -0.19542929530143738,
+                  -1.0817469358444214,
+                  -1.5881397724151611,
+                  -0.46998167037963867,
+                  -1.5881397724151611,
+                  -1.0285311937332153,
+                  -1.4299967288970947,
+                  -0.352459579706192,
+                  0.43040510066612103
+                ],
+                [
+                  -0.3667679727077484,
+                  -0.3601309657096863,
+                  -0.35310494899749756,
+                  -0.3462872803211212,
+                  -0.3399457037448883,
+                  -0.1591150313615799,
+                  -0.33057868480682373,
+                  -0.1591150313615799,
+                  -0.14419591426849365,
+                  -0.14419591426849365,
+                  -0.08901245146989822,
+                  -0.38379448652267456,
+                  -0.08901245146989822,
+                  -0.13514907658100128,
+                  -0.1030481681227684,
+                  -1.487798810005188,
+                  -0.27154669165611267,
+                  -0.06689492613077164,
+                  -1.3495495319366455,
+                  2.556673526763916,
+                  0.8827202916145325,
+                  0.8827202916145325,
+                  5.681795597076416,
+                  0.8827202916145325,
+                  5.681795597076416,
+                  -0.9805591106414795,
+                  -0.8945518732070923,
+                  -0.9805591106414795,
+                  -0.17041978240013123,
+                  -0.34538373351097107,
+                  -0.13331948220729828,
+                  0.30731471097698415
+                ],
+                [
+                  -0.26885250210762024,
+                  -0.2598482370376587,
+                  -0.2511342465877533,
+                  -0.24983644485473633,
+                  -0.24202129244804382,
+                  -0.12623272836208344,
+                  -0.27144303917884827,
+                  -0.12623272836208344,
+                  -0.11396815627813339,
+                  -0.11396815627813339,
+                  -0.32383084297180176,
+                  1.1067007780075073,
+                  -0.32383084297180176,
+                  -1.6545813083648682,
+                  2.074533224105835,
+                  -1.6589279174804688,
+                  -0.170182466506958,
+                  -0.019007708877325058,
+                  -0.3364143967628479,
+                  1.0853575468063354,
+                  -0.05384882166981697,
+                  -0.05384882166981697,
+                  -0.7404291033744812,
+                  -0.05384882166981697,
+                  -0.7404291033744812,
+                  5.4690399169921875,
+                  2.1308844089508057,
+                  5.4690399169921875,
+                  -0.1292559653520584,
+                  -0.730623185634613,
+                  -0.5524138808250427,
+                  0.1467615586388849
+                ],
+                [
+                  -0.54617840051651,
+                  -0.538058876991272,
+                  -0.5306140184402466,
+                  -0.5258501768112183,
+                  -0.5238465070724487,
+                  -0.2051680088043213,
+                  -0.43978437781333923,
+                  -0.2051680088043213,
+                  -0.2004115730524063,
+                  -0.2004115730524063,
+                  -0.7375789880752563,
+                  2.1130082607269287,
+                  -0.7375789880752563,
+                  -1.176760196685791,
+                  -1.1268123388290405,
+                  -1.7264295816421509,
+                  2.434518575668335,
+                  -1.232590913772583,
+                  -0.04418310150504112,
+                  -0.23685795068740845,
+                  -0.10745196789503098,
+                  -0.10745196789503098,
+                  -0.2412133514881134,
+                  -0.10745196789503098,
+                  -0.2412133514881134,
+                  -0.7605072259902954,
+                  -0.053522564470767975,
+                  -0.7605072259902954,
+                  3.6670970916748047,
+                  7.657559871673584,
+                  3.9903759956359863,
+                  0.5252613300881032
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hey"
+      ],
+      [
+        "en",
+        "bye"
+      ],
+      [
+        "en",
+        "goodbye"
+      ],
+      [
+        "en",
+        "see you later"
+      ],
+      [
+        "en",
+        "who are you"
+      ],
+      [
+        "en",
+        "what is your name"
+      ],
+      [
+        "en",
+        "my name is %name%"
+      ],
+      [
+        "en",
+        "I'm %name%"
+      ],
+      [
+        "en",
+        "call me %name%"
+      ],
+      [
+        "en",
+        "schedule a meeting on %date%"
+      ],
+      [
+        "en",
+        "meet me %date%"
+      ],
+      [
+        "en",
+        "email me at %email%"
+      ],
+      [
+        "en",
+        "my email is %email%"
+      ],
+      [
+        "en",
+        "I love this"
+      ],
+      [
+        "en",
+        "this is awful"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {
+      "en": {
+        "email": {
+          "name": "email",
+          "type": "regex",
+          "rules": [
+            "/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[A-Za-z]{2,})/g"
+          ]
+        },
+        "date": {
+          "name": "date",
+          "type": "regex",
+          "rules": [
+            "/\\b(?:today|tomorrow|monday|tuesday|wednesday|thursday|friday|saturday|sunday|(?:\\d{1,2}\\/\\d{1,2}(?:\\/\\d{2,4})?))\\b/gi"
+          ]
+        },
+        "name": {
+          "name": "name",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "abhishek",
+              "texts": [
+                "abhishek",
+                "abhi"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "greetings.hello": [
+          {
+            "answer": "Hello! How can I help you?"
+          }
+        ],
+        "greetings.bye": [
+          {
+            "answer": "Goodbye! Have a great day!"
+          }
+        ],
+        "bot.name": [
+          {
+            "answer": "I am your NLP chatbot built with Node.js!"
+          }
+        ],
+        "calendar.create": [
+          {
+            "answer": "Got it. I’ll note that date."
+          }
+        ],
+        "user.setEmail": [
+          {
+            "answer": "Thanks! I saved your email."
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {
+    "user.setName": {
+      "name": {
+        "intent": "user.setName",
+        "entity": "name",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "calendar.create": {
+      "date": {
+        "intent": "calendar.create",
+        "entity": "date",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "user.setEmail": {
+      "email": {
+        "intent": "user.setEmail",
+        "entity": "email",
+        "mandatory": false,
+        "locales": {}
+      }
+    }
+  }
+}
